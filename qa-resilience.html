@@ -1,0 +1,8 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dear, font failure checks</title></head><body><canvas id="scene" aria-label="Interactive three-dimensional typewriter on a writing desk"></canvas><header><h1>Dear,</h1></header><div id="hotspots"></div><aside id="samples" class="samples"></aside><div id="toast" role="status" aria-live="polite"></div><div id="orientation"><span></span><button>×</button></div><div id="dialog" hidden></div><footer><span id="saved"></span></footer><output id="fault-mode" style="position:fixed;right:12px;top:12px;z-index:50;background:#eee0bf;padding:10px;font:12px monospace"></output><script type="module">
+// Dev-only fault injection. This page is excluded from the production build.
+const mode=new URLSearchParams(location.search).get('mode')||'reject';
+document.fonts.load=mode==='stall'?()=>new Promise(()=>{}):()=>Promise.reject(Error('Simulated font failure'));
+document.querySelector('#fault-mode').textContent='Simulated font '+mode;
+await import('/src/app.js');
+document.querySelector('#fault-mode').dataset.ready='true';
+</script></body></html>

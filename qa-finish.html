@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dear, early finish regression</title></head><body><canvas id="scene" aria-label="Interactive three-dimensional typewriter on a writing desk"></canvas><header><h1>Dear,</h1></header><div id="hotspots"></div><aside id="samples" class="samples"></aside><div id="toast" role="status" aria-live="polite"></div><div id="orientation"><span></span><button>×</button></div><div id="dialog" hidden></div><footer><span id="saved"></span></footer><pre id="qa-result" style="position:fixed;left:8px;top:8px;z-index:60;background:#eee0bf;padding:10px;font:12px monospace;max-width:410px;white-space:pre-wrap">Checking early clicks…</pre><script type="module">
+import {page,strike} from '/src/mechanics.js';await import('/src/app.js');
+const q=new URLSearchParams(location.search),d=window.__dear,wait=ms=>new Promise(r=>setTimeout(r,ms)),out=document.querySelector('#qa-result'),result={};await d.action('paper');
+document.fonts.load=()=>new Promise(()=>{});let failed=false;const animate=Element.prototype.animate;if(q.has('failure'))Element.prototype.animate=function(...args){if(!failed&&this.closest('#ceremony')){failed=true;throw Error('Injected animation cancellation');}return animate.apply(this,args);};
+for(const type of ['light','thick','postcard']){
+ const p=page(type);for(const ch of 'Dear, kept safe.')strike(p,ch,{font:'elite'});if(type==='postcard')p.photo='/art/animal-stamps-v2.png';const marks=JSON.stringify(p.marks);
+ Object.assign(d.project,{id:crypto.randomUUID(),name:'QA early finish '+type,pages:[p],active:0,completed:false});
+ d.action('inspect');const previewPending=!document.querySelector('#preview').src;document.querySelector('#putaway').click();await wait(80);const acknowledged=!!document.querySelector('#ceremony');
+ const stages=[];let retryVisible=false;const until=performance.now()+15000;
+ while(performance.now()<until){const stage=document.querySelector('#ceremony')?.dataset.stage;if(stage&&!stages.includes(stage))stages.push(stage);if(!stage&&document.querySelector('#putaway')){retryVisible=!d.project.completed;document.querySelector('#putaway').click();await wait(80);continue;}if(!stage&&d.project.completed)break;await wait(30);}
+ result[type]={previewPending,earlyClickAcknowledged:acknowledged,stages,retryVisible,completed:d.project.completed,marksPreserved:JSON.stringify(p.marks)===marks,cleaned:!document.querySelector('#ceremony')};out.textContent=JSON.stringify(result,null,2);
+}
+out.dataset.done='true';
+</script></body></html>

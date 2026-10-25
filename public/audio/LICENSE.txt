@@ -1,0 +1,67 @@
+Dear, — recorded mechanical audio
+Retrieved 2026-10-18. All included recordings are released under Creative Commons
+CC0 1.0 Universal (public-domain dedication):
+https://creativecommons.org/publicdomain/zero/1.0/
+
+key-1.wav through key-5.wav
+  Excerpts from "Typewriter #4" by Joseph SARDIN — BigSoundBank / LaSonotheque.
+  Real Hermes Precisa 305, recorded with SoundDevices MixPre-3 + Neumann KM184.
+  Source: https://bigsoundbank.com/typewriter-4-s2837.html
+  Original: https://bigsoundbank.com/UPLOAD/bwf-en/2837.wav
+  Edits: isolated strikes (starts 0.464, 1.319, 2.269, 3.264, 4.299 seconds;
+  approximately 0.241 seconds each), stereo downmix, DC removal, gain matching,
+  short fades, conversion from 24-bit to 16-bit PCM mono at 48 kHz.
+
+space.wav
+  "Typewriter, space" by Joseph SARDIN — BigSoundBank / LaSonotheque.
+  Real Hermes Precisa 305, SoundDevices MixPre-3 + Neumann KM184.
+  https://bigsoundbank.com/typewriter-space-s2843.html
+  https://bigsoundbank.com/UPLOAD/bwf-en/2843.wav
+  Edits: leading silence trimmed, 0.48-second excerpt, gain matching, short fades,
+  converted to 16-bit PCM mono at 48 kHz. Also used quietly for small controls.
+
+bell.wav
+  "Typewriter, Bell #1" by Joseph SARDIN — BigSoundBank / LaSonotheque.
+  Real Hermes Precisa 305, SoundDevices MixPre-3 + Neumann KM184.
+  https://bigsoundbank.com/typewriter-bell-s2844.html
+  https://bigsoundbank.com/UPLOAD/bwf-en/2844.wav
+  Edits: leading silence trimmed, 1.7-second excerpt, gain matching, fade,
+  converted to 16-bit PCM mono at 48 kHz.
+  Author license: https://bigsoundbank.com/licenses.html
+
+return.mp3
+  "typewriter_reset2.wav" by Mihacappy, recorded with a phone.
+  A real manual typewriter carriage being returned by hand.
+  https://freesound.org/people/Mihacappy/sounds/868294/
+  https://cdn.freesound.org/previews/868/868294_10594370-hq.mp3
+  Source recording is CC0. Author requests no AI-training use; this site uses
+  the recording only for browser playback, not training.
+
+shift.mp3
+  "Silver Typewriter (Shift Key 2)" by moodyfingers.
+  Real typewriter, smartphone recording, post-processed by the author.
+  https://freesound.org/people/moodyfingers/sounds/734317/
+  https://cdn.freesound.org/previews/734/734317_15504031-hq.mp3
+  Source page links to CC0 1.0 Universal.
+
+platen.mp3
+  "Olimpia Typewriter winding2" by ikomlino.
+  Real 1970s Olimpia typewriter mechanism, Sennheiser 416 / Sound Devices 442.
+  https://freesound.org/people/ikomlino/sounds/852750/
+  https://cdn.freesound.org/previews/852/852750_147298-hq.mp3
+  Source recording is CC0. A 0.24-second winding excerpt plays for a platen step.
+
+paper.mp3
+  "R20-03-Pull Paper Out of Typewriter.wav" by craigsmith.
+  Real manual typewriter, historical optical/magnetic recording preserved by USC.
+  https://freesound.org/people/craigsmith/sounds/483334/
+  https://cdn.freesound.org/previews/483/483334_2524442-hq.mp3
+  Source recording is CC0. Some source tape/optical noise is retained.
+
+The MP3 files are the source site's high-quality preview encodings. Leading and
+trailing silence are trimmed in memory on decode, with a short tail fade. Shift
+is limited to 0.6 seconds, platen to 0.24 seconds and paper to 1.35 seconds. Playback of key
+variants has at most +/-1% rate variation and subtle gain variation.
+
+No mechanical oscillator/noise imitation is used. Seasonal environmental
+recordings and processing details are documented in AMBIENCE-LICENSE.txt.

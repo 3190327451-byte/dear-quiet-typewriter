@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Dear Slug';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/courier-prime-0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Dear Slug';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/courier-prime-1.ttf) format('truetype');
+}
+@font-face{font-family:'Dear Cutive';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/cutive-mono.ttf') format('truetype')}
+@font-face{font-family:'Dear Elite';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/special-elite.ttf') format('truetype')}

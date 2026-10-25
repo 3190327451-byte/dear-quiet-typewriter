@@ -1,0 +1,40 @@
+[
+  {
+    "file": "summer-coast-loop.wav",
+    "source_id": 1046,
+    "source_excerpt_seconds": [
+      2,
+      26
+    ],
+    "seconds": 22.0,
+    "sample_rate": 48000,
+    "channels": 1,
+    "bits": 16,
+    "rms_dbfs": -23.912,
+    "sample_peak_dbfs": -4.203,
+    "approx_integrated_lufs": -22.0,
+    "seam_delta_dbfs": -23.281,
+    "treatment": "DC removal, stereo-to-mono, 2-second equal-power loop overlap",
+    "bytes": 2112044,
+    "sha256": "1d8c8e196d8c434c1b8e5e587a3b1add6f51db1f8242fa1217796e1091e076de"
+  },
+  {
+    "file": "winter-fireplace-loop.wav",
+    "source_id": 2857,
+    "source_excerpt_seconds": [
+      2,
+      26
+    ],
+    "seconds": 22.0,
+    "sample_rate": 48000,
+    "channels": 1,
+    "bits": 16,
+    "rms_dbfs": -24.628,
+    "sample_peak_dbfs": -4.937,
+    "approx_integrated_lufs": -22.0,
+    "seam_delta_dbfs": -40.288,
+    "treatment": "DC removal, stereo-to-mono, 2-second equal-power loop overlap, smooth tanh transient attenuation (5 x source RMS) to tame close-mic fire pops",
+    "bytes": 2112044,
+    "sha256": "929c7a71570455c0463b8192ae3d4c57d1bd29dbe7226ded841d2bcf6adae0b5"
+  }
+]

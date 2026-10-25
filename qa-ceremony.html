@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dear, ceremony regression</title><link rel="stylesheet" href="/src/style.css"><style>body{background:#8c7153}#qa-results{position:fixed;top:12px;left:12px;z-index:60;background:#f4e9d2;padding:12px;font:12px monospace;white-space:pre-wrap;max-width:420px}</style></head><body><pre id="qa-results">Checking all three ceremonies…</pre><script type="module">
+import {page,strike} from '/src/mechanics.js';import {putAway} from '/src/ceremony.js';
+const q=new URLSearchParams(location.search),out=document.querySelector('#qa-results'),results={},nativeAnimate=Element.prototype.animate,nativeMedia=window.matchMedia.bind(window);
+if(q.has('reduced'))window.matchMedia=s=>s.includes('prefers-reduced-motion')?{matches:true}:nativeMedia(s);
+let held=false;Element.prototype.animate=function(frames,options){const a=nativeAnimate.call(this,frames,options);if(q.get('hold')===document.querySelector('#ceremony')?.dataset.stage&&!held){held=true;a.pause();a.currentTime=options.duration*.85;}return a;};
+for(const type of q.has('type')?[q.get('type')]:['light','thick','postcard']){
+ const p=page(type);for(const c of 'Dear, keep this afternoon.')strike(p,c);if(type==='postcard'){p.photo='/art/animal-stamps-v2.png';p.stamps=[{kind:'stamp',animal:0,edition:2,x:128,y:8}];}
+ const stages=[],faces=[],begun=performance.now();let visible=true,decoded=true,previous='';
+ const watch=new MutationObserver(()=>{const overlay=document.querySelector('#ceremony');if(!overlay)return;const stage=overlay.dataset.stage;if(stage===previous)return;previous=stage;stages.push(stage);faces.push(overlay.dataset.face);if(stage==='preparing')return;const sheet=overlay.querySelector('.finished-sheet'),rect=sheet?.getBoundingClientRect();visible&&=!!rect&&rect.width>0&&rect.height>0&&rect.right>0&&rect.left<innerWidth;const face=overlay.querySelector('.sheet-front');decoded&&=!!face?.style.backgroundImage.includes('data:image');out.textContent=JSON.stringify({results,current:{type,stage,face:overlay.dataset.face,held:q.get('hold')}},null,2);});
+ watch.observe(document.body,{subtree:true,childList:true,attributes:true,attributeFilter:['data-stage','data-face']});
+ await putAway(p,{zh:true});watch.disconnect();results[type]={stages,faces,visible,decoded,duration:Math.round(performance.now()-begun),overlayCleaned:!document.querySelector('#ceremony')};
+}
+out.textContent=JSON.stringify(results,null,2);out.dataset.done='true';
+</script></body></html>

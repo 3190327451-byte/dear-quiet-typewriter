@@ -1,0 +1,4 @@
+.offline-enabled footer{display:block;left:20px;right:auto;bottom:12px;z-index:9;max-width:calc(100vw - 40px);font:10px/1.5 system-ui;letter-spacing:0;color:#f2e5cb;opacity:.9;text-shadow:0 1px 3px #332314}
+#update-notice{position:fixed;left:20px;bottom:40px;z-index:45;display:flex;align-items:center;gap:18px;padding:12px 16px;background:#f1e3c9;color:#59452f;border:1px solid #a48b67;box-shadow:0 4px 18px #33231435;font:12px system-ui}
+#update-notice button{border:1px solid #8f7654;background:#786346;color:#fff2d7;padding:7px 10px;border-radius:3px}
+@media(max-width:600px){.offline-enabled footer{font-size:9px;left:12px;bottom:7px}#update-notice{left:12px;right:12px;bottom:30px;justify-content:space-between}}

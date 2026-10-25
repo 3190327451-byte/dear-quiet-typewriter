@@ -1,0 +1,66 @@
+Dear, seasonal environmental ambience
+Prepared 2026-10-20. No music was added. These are processed field recordings,
+not generated music or oscillator/noise imitations.
+
+License for both source recordings: CC0 1.0 Universal / public-domain dedication.
+https://creativecommons.org/publicdomain/zero/1.0/
+Author's license page: https://bigsoundbank.com/licenses.html
+The author permits copying, transformation, redistribution and commercial use.
+Suggested credit: Additional sounds: Joseph SARDIN - BigSoundBank.com.
+
+summer-coast-loop.wav
+  Source: "Small Waves Facing the Ocean", sound 1046, Joseph SARDIN.
+  https://bigsoundbank.com/small-waves-facing-the-ocean-s1046.html
+  https://bigsoundbank.com/UPLOAD/bwf-en/1046.wav
+  Source description: small waves in the English Channel at Houlgate,
+  Calvados, Normandy, France. Recorded facing the sea with a Tascam DR-40.
+  Source format: stereo 48 kHz, 16-bit PCM.
+  Used source time 00:02-00:26. This is gentle shore wash; no extra wind,
+  music, speech or bird layer was mixed in.
+
+winter-fireplace-loop.wav
+  Source: "Fireplace #5", sound 2857, Joseph SARDIN.
+  https://bigsoundbank.com/fireplace-5-s2857.html
+  https://bigsoundbank.com/UPLOAD/bwf-en/2857.wav
+  Source description: indoor fireplace, realistic recording.
+  Equipment: SoundDevices MixPre-3 + Neumann KM184.
+  Source format: stereo 48 kHz, 24-bit PCM.
+  Used source time 00:02-00:26. No music or added wind layer.
+  Strong close-microphone fire pops were smoothly attenuated with a tanh
+  transfer curve whose knee is 5 times the excerpt's RMS, before loudness
+  normalization. This avoids isolated explosive pops dominating the quiet bed.
+
+Processing common to both
+  DC removal; stereo downmix to mono; 2-second equal-power cyclic overlap;
+  approximately -22.00 LUFS integrated K-weighted normalization; conversion
+  to 16-bit PCM at 48 kHz. Each delivered loop is exactly 22 seconds.
+  No encoder delay, added silence, hard clipping or fade-to-silence at the seam.
+  The seam uses consecutive samples from the original recording. Its absolute
+  sample step is naturally higher for foamy waves than for the fireplace.
+  Measurements and SHA-256 checksums are in ambience-measurements.json.
+
+Measured delivered files
+  summer: RMS -23.912 dBFS; sample peak -4.203 dBFS; approx -22.000 LUFS.
+  winter: RMS -24.628 dBFS; sample peak -4.937 dBFS; approx -22.000 LUFS.
+  Each file: 2,112,044 bytes; 1,056,000 samples; mono, 48 kHz, 16-bit PCM.
+  LUFS is a local K-weighted, 400-ms / 100-ms-step gated calculation, not a
+  certified mastering measurement. RMS and sample peaks are direct PCM measures.
+
+Playback recommendation
+  Decode each WAV once; use native AudioBufferSourceNode loop=true over the full
+  buffer. Do not trim the beginning as if it were a short mechanical sample:
+  the background starts immediately and the baked cyclic seam must be preserved.
+  Only one season source plays. Fade out the old source over 45 ms, stop it,
+  then start the latest selected source with a 180 ms fade-in. No crossfade.
+  Hidden tabs stop their environmental source. Fireplace playback additionally
+  uses a -8 dB high shelf at 1.8 kHz, a 3.8 kHz low-pass (Q 0.55) and gentle
+  2:1 compression to soften close crackles.
+  Do not pitch-shift either season to create the other. An environment setting
+  should control the shared gain of these buses. At -22 LUFS before mixing,
+  a gain of 0.25 yields approximately -34 LUFS before the master volume.
+
+Limitations
+  These are 22-second excerpts and repeat every 22 seconds. The stereo originals
+  were downmixed for a small, neutral background asset. No listening claim or
+  specific-device mix approval is implied by the objective measurements; audition
+  the final browser mix and check perceived balance on headphones and speakers.

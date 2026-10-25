@@ -1,0 +1,9 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Dear, withdrawal frame</title><style>body{margin:0}canvas{position:fixed;inset:0;width:100%;height:100%}.object-control{display:none}#state{position:fixed;top:10px;left:10px;background:#eee0bf;padding:10px;font:12px monospace;z-index:5}</style></head><body><canvas id="scene"></canvas><div id="hotspots"></div><output id="state">Preparing withdrawal frame…</output><script type="module">
+import {Desk} from '/src/scene.js';import {page,strike} from '/src/mechanics.js';import {renderPaper} from '/src/ink.js';
+const q=new URLSearchParams(location.search),desk=new Desk(document.querySelector('canvas'),()=>{}),p=page(q.get('type')||'light');if(q.get('model')==='typeball')desk.setModel('typeball');
+for(const ch of 'Dear, a quiet afternoon.')strike(p,ch);await desk.paper(await renderPaper(p),p);desk.view(true);await new Promise(r=>setTimeout(r,2100));
+const phase=+(q.get('phase')||0);desk.animate=async(duration,fn,key)=>{if(key==='paper-exit')fn(phase);else if(key==='paper-bail')fn(1);return new Promise(()=>{});};
+// Hold an actual remove() callback at the selected frame after opening the bail.
+const animate=desk.animate;desk.animate=(duration,fn,key)=>key==='paper-bail'?(fn(1),Promise.resolve()):animate(duration,fn,key);desk.remove();
+document.querySelector('#state').textContent=`${p.type} · ${desk.model} · withdrawal ${phase}`;
+</script></body></html>

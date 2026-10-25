@@ -1,0 +1,28 @@
+const svg=path=>`<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${path}</svg>`;
+export const icons={
+ trash:svg('<path d="M6 9h20M12 9V5h8v4M9 9l1 19h12l1-19M14 13v10m4-10v10"/>'),
+ undo:svg('<path d="M12 8l-7 7 7 7M5 15h14a8 8 0 0 1 8 8"/>'),
+ keyboard:svg('<rect x="3" y="8" width="26" height="17" rx="2"/><path d="M7 12h1m4 0h1m4 0h1m4 0h1M7 16h1m4 0h1m4 0h1m4 0h1M9 21h14"/>'),
+ ambient:svg('<path d="M5 18c3-5 6 5 10 0s7 4 12-1M5 23c3-5 6 5 10 0s7 4 12-1M8 10c3-5 7-4 10-4m-6 7c2-4 5-4 9-4"/>'),
+ postmark:svg('<circle cx="12" cy="16" r="8"/><path d="M8 13h8m-8 6h8m4-7c3-4 5 3 9-1m-9 6c3-4 5 3 9-1m-9 6c3-4 5 3 9-1"/>'),
+ sun:svg('<circle cx="16" cy="16" r="5"/><path d="M16 3v4m0 18v4M3 16h4m18 0h4M7 7l3 3m12 12 3 3M7 25l3-3m12-12 3-3"/>'),
+ snow:svg('<path d="M16 3v26M5 9l22 14M5 23 27 9M12 6l4 3 4-3m-8 20 4-3 4 3M6 13l4-1-1-4m14 16-1-4 4-1M6 19l4 1-1 4m14-16-1 4 4 1"/>'),
+ hand:svg('<path d="M12 17V7a2 2 0 0 1 4 0v9-3a2 2 0 0 1 4 0v3-2a2 2 0 0 1 4 0v3a2 2 0 0 1 4 0v5c0 5-4 8-9 8-4 0-6-2-8-5l-5-6c-2-3 1-5 3-3l3 3"/>'),
+ paper:svg('<path d="M8 4h12l5 5v19H8zM20 4v6h5M12 15h9m-9 4h9m-9 4h5"/>'),
+ release:svg('<path d="M10 21V7h12v14M5 21h22M16 27V13m-4 4 4-4 4 4"/>'),
+ book:svg('<path d="M6 5h19v23H6zM10 5v23m4-16h7m-7 4h5"/>'),
+ drawer:svg('<path d="M5 9h22v18H5zM5 16h22m-14 5h6M7 9V5h18v4"/>'),
+ envelope:svg('<path d="M4 9h24v17H4zM4 9l12 10L28 9M4 26l8-8m16 8-8-8"/>'),
+ box:svg('<path d="M4 11h24v5H4zM6 16v12h20V16M11 7h10m-8 14h6"/>'),
+ postcard:svg('<path d="M3 6h26v20H3zM17 9v14m5-14h4v5h-4zm-2 9h6m-6 4h6M6 12h7m-7 4h6"/>'),
+ ribbon:svg('<circle cx="8" cy="16" r="5"/><circle cx="24" cy="16" r="5"/><path d="M8 11h16M8 21h16M7 15h2m14 2h2"/>'),
+ spacing:svg('<path d="M8 5v22m-3-3 3 3 3-3M5 8l3-3 3 3m5 0h12m-12 8h12m-12 8h12"/>'),
+ up:svg('<path d="M16 26V6m-7 7 7-7 7 7"/>'),down:svg('<path d="M16 6v20m-7-7 7 7 7-7"/>'),
+ flip:svg('<path d="M5 15a11 11 0 0 1 20-6l2 4m-1-8 1 8-8-1M27 18a11 11 0 0 1-20 6l-2-4m1 8-1-8 8 1"/>'),
+ image:svg('<path d="M4 5h24v22H4zM4 23l8-9 6 6 4-5 6 8"/><circle cx="21" cy="11" r="2"/>'),
+ print:svg('<path d="M9 11V4h14v7M9 23H5V11h22v12h-4M9 19h14v10H9zM23 15h1"/>'),
+ plus:svg('<path d="M16 5v22M5 16h22"/>'),
+ close:svg('<path d="m8 8 16 16M8 24 24 8"/>'),
+ check:svg('<path d="m6 17 7 7L27 8"/>'),
+ backup:svg('<path d="M7 14v14h18V14M16 3v18m-5-5 5 5 5-5M8 8H4v20m20-20h4v20"/>')
+};

@@ -1,0 +1,18 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dear, input and sound regression</title></head><body><canvas id="scene" aria-label="Interactive three-dimensional typewriter on a writing desk"></canvas><header><h1>Dear,</h1></header><div id="hotspots"></div><aside id="samples" class="samples"></aside><div id="toast" role="status" aria-live="polite"></div><div id="orientation"><span></span><button>×</button></div><div id="dialog" hidden></div><footer><span id="saved"></span></footer><pre id="qa-result" style="position:fixed;left:8px;top:8px;z-index:50;background:#eee0bf;padding:10px;font:12px monospace;max-width:410px;white-space:pre-wrap">Checking…</pre><script type="module">
+// Development fixture only: the production entry excludes this file.
+import {Ambience} from '/src/ambience.js';
+await import('/src/app.js');
+const d=window.__dear,wait=ms=>new Promise(r=>setTimeout(r,ms)),r={},out=document.querySelector('#qa-result');
+await d.action('paper');await d.action('key:A');
+const key=(key,code,extra={})=>dispatchEvent(new KeyboardEvent('keydown',{key,code,bubbles:true,cancelable:true,...extra}));
+key('Process','KeyB',{keyCode:229,isComposing:true});key('Process','Enter',{keyCode:229,isComposing:true});key('Process','KeyC',{keyCode:229,isComposing:true});
+await wait(1900);r.imeFirstKeys=d.page.marks.map(m=>m.ch).join('')==='abc';r.imeReturn=d.page.marks[2].y>d.page.marks[0].y;
+document.querySelector('#sounddock button').click();key('d','KeyD');key('Enter','Enter');key('e','KeyE');await wait(600);
+r.afterAudioControl=d.page.marks.map(m=>m.ch).join('')==='abcde'&&d.page.marks[4].y>d.page.marks[3].y;
+key('Enter','Enter');key('Enter','Enter');key('f','KeyF');await wait(1000);r.queuedReturns=d.page.marks.at(-1).ch==='f'&&d.page.marks.at(-1).y>d.page.marks[4].y+12;
+const rate=48000,c=new OfflineAudioContext(1,rate,rate),buffer=c.createBuffer(1,rate,rate),data=buffer.getChannelData(0);for(let i=0;i<rate;i++)data[i]=.02*(Math.sin(2*Math.PI*500*i/rate)+Math.sin(2*Math.PI*6000*i/rate));
+const ambience=new Ambience(c,c.destination,new Map([['winter',buffer]]));ambience.set('winter');const rendered=(await c.startRendering()).getChannelData(0);
+const amplitude=f=>{let sin=0,cos=0,n=0;for(let i=rate*.3;i<rate*.9;i++){sin+=rendered[i]*Math.sin(2*Math.PI*f*i/rate);cos+=rendered[i]*Math.cos(2*Math.PI*f*i/rate);n++;}return Math.hypot(sin,cos)*2/n;};
+r.fireHighBandDb=+(20*Math.log10(amplitude(6000)/amplitude(500))).toFixed(1);r.fireHighBandSoftened=r.fireHighBandDb< -12;
+r.inkCount=+document.querySelector('#scene').dataset.inkCount;r.expectedInkCount=d.page.marks.length;out.textContent=JSON.stringify(r,null,2);out.dataset.done='true';
+</script></body></html>
